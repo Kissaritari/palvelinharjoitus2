@@ -17,4 +17,6 @@ public class Todo {
     private String task;
     private boolean done;
 
+    public Todo(String task) {
+    }
 }
