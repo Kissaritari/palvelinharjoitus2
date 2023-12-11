@@ -10,14 +10,13 @@ export function TodoView() {
 
     useEffect(()=> {
         TodoEndpoint.findAll().then(setTodos);
-
     },[]);
     return (
         <div className="p-m">
             <h1>To-Do</h1>
 
             <div className="flex gap-s">
-                <TextField/>
+                <TextField value="{task}" onChange= {e => setTask(e.target.value)}/>
                 <Button theme="primary">Lisää </Button>
             </div>
         </div>
