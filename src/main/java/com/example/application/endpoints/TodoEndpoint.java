@@ -21,8 +21,8 @@ public class TodoEndpoint {
         return repository.findAll();
     }
 
-    public Todo add(String task) {
-        return repository.save(new Todo(task));
+    public Todo add(String task, String title) {
+        return repository.save(new Todo(task, title));
     }
 
     public Todo update(Todo todo) {

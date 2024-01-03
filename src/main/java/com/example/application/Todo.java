@@ -5,18 +5,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.sql.Time;
+import java.util.Date;
+
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Todo {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String task;
     private boolean done;
+    private String title;
 
-    public Todo(String task) {
+    public Todo(String task, String title) {
     }
 }
