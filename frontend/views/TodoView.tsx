@@ -17,10 +17,14 @@ export function TodoView() {
     },[]);
 
     async function addTodo() {
+
         const saved = await TodoEndpoint.add(task,title);
+        console.log(" saved= " + saved);
         if (saved){
+            console.log(saved);
             setTodos([...todos,saved]);
             setTask('');
+            setTitle('');
         }
     }
 
@@ -35,7 +39,7 @@ export function TodoView() {
     return (
         <div className="p-m">
             <h1>To-Do</h1>
-
+            <h1>{title} {task}</h1>
             <div className="gap-s">
                 <div>
                 <TextField value={title} placeholder="Otsikko" onChange= {e => setTitle(e.target.value)}/>
@@ -50,10 +54,12 @@ export function TodoView() {
                 <Button theme="primary" onClick={addTodo}>Lisää </Button>
             </div>
             {todos.map(todo => (
-                <div className="todo" key={todo.id}>
-                <Checkbox checked={todo.done} onCheckedChanged={e => updateTodo(todo, e.detail.value)}/>
-                <button className="editButton"> edit</button>
-                <span>{todo.task}</span>
+                <div className="todo"  key={todo.id}>
+                    <h3>{todo.title}</h3>
+                    <Checkbox checked={todo.done} onCheckedChanged={e => updateTodo(todo, e.detail.value)}/>
+                    <button className="editButton"> edit</button>
+                    
+                    <ol>{todo.task}</ol>
                 
                 </div>
             ))}

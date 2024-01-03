@@ -10,16 +10,15 @@ import java.util.Date;
 
 @Getter
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Todo {
     @Id
     @GeneratedValue
     private Long id;
+    @NonNull
     private String task;
+    @NonNull
+    private  String title;
     private boolean done;
-    private String title;
-
-    public Todo(String task, String title) {
-    }
 }
