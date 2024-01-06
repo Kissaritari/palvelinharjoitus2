@@ -5,12 +5,13 @@ import com.example.application.Todo;
 import com.example.application.TodoRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.Endpoint;
+import jakarta.annotation.security.PermitAll;
 
 import java.util.Date;
 import java.util.List;
 
 @Endpoint
-@AnonymousAllowed
+@PermitAll
 public class TodoEndpoint {
 
     private TodoRepository repository;
@@ -32,5 +33,10 @@ public class TodoEndpoint {
 
     public Todo update(Todo todo) {
         return repository.save(todo);
+    }
+
+    public Todo delete(Todo todo) {
+        repository.delete(todo);
+        return todo;
     }
 }

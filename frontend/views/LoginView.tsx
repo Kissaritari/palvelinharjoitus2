@@ -1,25 +1,18 @@
 import Todo from "Frontend/generated/com/example/application/Todo"
-import { TodoEndpoint } from "Frontend/generated/endpoints";
-import { TextField } from "@hilla/react-components/TextField.js";
-import { PasswordField } from '@hilla/react-components/PasswordField.js'
-import { Button } from "@hilla/react-components/Button.js";
+import LoginForm from "Frontend/components/placeholder/LoginForm"
+
 export function LoginView() {
-
-
     
     return (
         <div className="p-m bg-contrast-5">
             <h1>To-Do</h1>
             <div>
-                <h2>Kirjaudu sisään</h2>
-                <div className="flex gap-s flex-col">
-                <TextField placeholder="Käyttäjätunnus"></TextField>
-                <PasswordField placeholder="Salasana"></PasswordField>
-                <button type="submit" className="kirjauduButton">Kirjaudu</button>
-                </div>
+                {LoginForm()}
             </div>
 
         </div>
 
 );
+
+    
 }

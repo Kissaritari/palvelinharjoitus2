@@ -10,8 +10,7 @@ h1, h2,h3 {
 div h3 {
     margin-left: 18px;
 }
-vaadin-text-field, vaadin-password-field {
-    margin-top: 13px;
+vaadin-text-field, vaadin-password-field , input{
     max-width: 20%;
     background-color: antiquewhite;
 }
