@@ -13,7 +13,7 @@ export function TodoView() {
     useEffect(()=> {
         TodoEndpoint.findAll().then(setTodos);
     },[]);
-
+/*
     async function addTodo() {
         const saved = await TodoEndpoint.add(task,title);
         if (saved){
@@ -21,7 +21,7 @@ export function TodoView() {
             setTask('');
         }
     }
-
+*/
     async function updateTodo(todo:Todo, done: boolean) {
         const saved = await TodoEndpoint.update({
         ...todo,done
@@ -37,7 +37,7 @@ export function TodoView() {
             <div className="flex gap-s">
                 <TextField value={title} onChange= {e => setTitle(e.target.value)}/>
                 <TextField value={task} onChange= {e => setTask(e.target.value)}/>
-                <Button theme="primary" onClick={addTodo}>Lisää </Button>
+                <Button theme="primary">Lisää </Button>
             </div>
             {todos.map(todo => (
                 <div className="todo" key={todo.id}>

@@ -23,11 +23,14 @@ public class TodoEndpoint {
         return repository.findAll();
     }
 
-    public Todo add(String task, String title ) {
-        System.out.println("luodaan todo osista task: " + task );
-        Todo todo = new Todo(task, title);
-        System.out.println("todo on: "+todo.getTask());
-
+    public Todo add(String task, String title, String date ) {
+        Date parsedDate = java.sql.Date.valueOf(date);
+        Todo todo = new Todo(task, title,parsedDate);
+        return repository.save(todo);
+    }
+    public Todo addWithoutDate(String task, String title) {
+        System.out.println("Tyltiin tänne ilman datea");
+        Todo todo = new Todo(task,title);
         return repository.save(todo);
     }
 

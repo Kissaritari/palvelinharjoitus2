@@ -3,16 +3,17 @@ html {
     --lumo-primary-color: rgb(41, 145, 219);
     color: antiquewhite;
 }
+
 h1, h2,h3 {
     color: antiquewhite;
     margin-left: 3px;
 }
-div h3 {
-    margin-left: 18px;
-}
-vaadin-text-field, vaadin-password-field , input{
-    max-width: 20%;
+
+vaadin-text-field , input{
+  
     background-color: antiquewhite;
+    margin-top: 7px;
+  
 }
 vaadin-button {
     background-color: rgba(12, 70, 156, 0.699);
@@ -28,7 +29,7 @@ padding: 2px;
 }
 vaadin-date-picker {
     background-color: rgb(60, 85, 147);
-    color: antiquewhite;
+    color: rgb(50, 50, 52);
     border-radius: 10%;
     padding: 0;
 }
@@ -54,4 +55,7 @@ vaadin-date-picker {
     border-style: outset;
     border-color: rgb(45, 75, 168);
     margin-right: 50%;
+}
+.todo-otsikko {
+    margin-left: 20px;
 }

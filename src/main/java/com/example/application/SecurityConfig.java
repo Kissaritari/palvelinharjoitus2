@@ -19,10 +19,12 @@ public class SecurityConfig extends VaadinWebSecurity {
         // denies all other
         super.configure(http);
         // use a form based login
-        http.formLogin(form -> form
-                .loginPage("/login")
-                .permitAll()
-        );
+        //http.formLogin(form -> form
+        //        .loginPage("/login")
+          //      .permitAll()
+        // );
+        http.formLogin(Customizer.withDefaults());
+
     }
 
     @Bean

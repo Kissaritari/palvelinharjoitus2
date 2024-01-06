@@ -20,5 +20,13 @@ public class Todo {
     private String task;
     @NonNull
     private  String title;
+    private Date date;
+
     private boolean done;
+
+    public Todo(String task, String title, Date date) {
+        this.task = task;
+        this.title = title;
+        this.date = date;
+    }
 }
